@@ -12,6 +12,9 @@ function run_all(fns) {
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || a && typeof a === "object" || typeof a === "function";
 }
+function null_to_empty(value) {
+  return value == null ? "" : value;
+}
 let current_component;
 function set_current_component(component) {
   current_component = component;
@@ -110,10 +113,11 @@ function add_attribute(name, value, boolean) {
 }
 export {
   setContext as a,
-  add_attribute as b,
+  null_to_empty as b,
   create_ssr_component as c,
-  escape as d,
-  each as e,
+  each as d,
+  escape as e,
+  add_attribute as f,
   missing_component as m,
   noop as n,
   safe_not_equal as s,

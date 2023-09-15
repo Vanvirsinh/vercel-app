@@ -1,4 +1,4 @@
-import { c as create_ssr_component, b as add_attribute } from "./ssr.js";
+import { c as create_ssr_component, f as add_attribute } from "./ssr.js";
 const BackToTop = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { pathName } = $$props;
   if ($$props.pathName === void 0 && $$bindings.pathName && pathName !== void 0)

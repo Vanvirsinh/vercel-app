@@ -1,4 +1,4 @@
-import { c as create_ssr_component, v as validate_component, e as each$1, b as add_attribute, d as escape } from "../../chunks/ssr.js";
+import { c as create_ssr_component, v as validate_component, d as each$1, f as add_attribute, e as escape } from "../../chunks/ssr.js";
 import { getWindow, getDocument } from "ssr-window";
 import { $, addClass, removeClass, hasClass, toggleClass, attr, removeAttr, transform, transition as transition$1, on, off, trigger, transitionEnd as transitionEnd$1, outerWidth, outerHeight, styles, offset, css as css$2, each, html, text, is, index, eq, append, prepend, next, nextAll, prev, prevAll, parent, parents, closest, find, children, filter, remove } from "dom7";
 import { B as BackToTop, C as ContactIcons } from "../../chunks/ContactIcons.js";
@@ -8225,42 +8225,48 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       name: "Plumbing",
       img: "../../images/plumbing-icon-1.png",
       afterHoverImg: "../../images/plumbing-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/plumbing"
     },
     {
       id: 2,
       name: "Electrical",
       img: "../../images/electrical-icon-1.png",
       afterHoverImg: "../../images/electrical-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/electrical"
     },
     {
       id: 3,
       name: "Pest Control",
       img: "../../images/pestcontrol-icon-1.png",
       afterHoverImg: "../../images/pestcontrol-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/pest-control"
     },
     {
       id: 4,
       name: "Deep Cleaning",
       img: "../../images/cleaning-icon-1.png",
       afterHoverImg: "../../images/cleaning-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/deep-cleaning"
     },
     {
       id: 5,
       name: "Painting",
       img: "../../images/painting-icon-1.png",
       afterHoverImg: "../../images/painting-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/painting"
     },
     {
       id: 6,
       name: "Carpentry",
       img: "../../images/carpentry-icon-1.png",
       afterHoverImg: "../../images/carpentry-icon-2.png",
-      isHovered: false
+      isHovered: false,
+      url: "/services/carpentry"
     }
   ];
   let features = [
@@ -8287,37 +8293,37 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     {
       id: 1,
       title: "Plumbing Service",
-      url: "/",
+      url: "/services/plumbing",
       img: "https://plus.unsplash.com/premium_photo-1664301135901-383935f2104f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 2,
       title: "Electrical Service",
-      url: "/",
+      url: "/services/electrical",
       img: "https://plus.unsplash.com/premium_photo-1664475006548-1baa3b7a1f84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 3,
-      title: " Pest Control Service",
-      url: "/",
+      title: "Pest Control Service",
+      url: "/services/pest-control",
       img: "https://plus.unsplash.com/premium_photo-1661306473412-23ca865974dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 4,
-      title: "Cleaning Service",
-      url: "/",
+      title: "Deep Cleaning Service",
+      url: "/services/deep-cleaning",
       img: "https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 5,
       title: "Painting Service",
-      url: "/",
+      url: "/services/painting",
       img: "https://plus.unsplash.com/premium_photo-1679090841820-8e9b8480beb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 6,
       title: "Carpentry Service",
-      url: "/",
+      url: "/services/carpentry",
       img: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UGx1bWJpbmclMjBzZXJ2aWNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
     }
   ];
@@ -8353,12 +8359,12 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   ];
   $$result.css.add(css);
   return `${$$result.head += `<!-- HEAD_svelte-1i7s9r_START -->${$$result.title = `<title>Fixonn - A multi-vendor service provider</title>`, ""}<!-- HEAD_svelte-1i7s9r_END -->`, ""}  <section id="hero">${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}</section>  <div class="animate_bottom relative mx-auto max-w-c-1390 px-6 -translate-y-2/4 z-10"><div class="bg-white flex py-6 px-40 border border-[#e0e0e0] rounded-md">${each$1(icons, (icon) => {
-    return `<div class="w-1/6 flex flex-col justify-center items-center gap-y-1"><img class="h-10 w-10 cursor-pointer"${add_attribute("src", icon.isHovered ? icon.afterHoverImg : icon.img, 0)}${add_attribute("alt", icon.name, 0)}> <span class="text-sm text-[#757693]">${escape(icon.name)}</span> </div>`;
-  })}</div></div>  <section id="about" class="pb-10" data-svelte-h="svelte-19ktiw7"><div class="mx-auto max-w-c-1390 px-6"><div class="grid grid-cols-2 gap-8 mt-4"><div class="animate_left"><div class="p-2 flex justify-center items-center"><img class="h-[450px]" src="../../images/52057.jpg" alt=""></div></div> <div class="font-mukta animate_right"><div class="flex flex-col gap-y-5"><h3 class="text-logoIcon font-bold w-fit">ABOUT</h3> <h1 class="text-5xl font-semibold text-black">What is Fixonn?</h1> <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    return `<div class="w-1/6 flex flex-col justify-center items-center gap-y-1"><a${add_attribute("href", icon.url, 0)}><img class="h-10 w-10 cursor-pointer"${add_attribute("src", icon.isHovered ? icon.afterHoverImg : icon.img, 0)}${add_attribute("alt", icon.name, 0)}></a> <span class="text-sm text-[#757693]">${escape(icon.name)}</span> </div>`;
+  })}</div></div>  <section id="about" class="pb-10" data-svelte-h="svelte-12sak3o"><div class="mx-auto max-w-c-1390 px-6"><div class="grid grid-cols-2 gap-8 mt-4"><div class="animate_left"><div class="p-2 flex justify-center items-center"><img class="h-[450px]" src="../../images/52057.jpg" alt=""></div></div> <div class="font-mukta animate_right"><div class="flex flex-col gap-y-5"><h3 class="text-logoIcon font-bold w-fit">ABOUT</h3> <h1 class="text-5xl font-semibold text-black">What is Fixonn?</h1> <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Quos repudiandae modi, iste voluptatibus similique
                         doloremque ullam, ad amet est numquam exercitationem!
                         Laudantium qui repellat tempora deleniti nam, molestias
-                        nostrum perferendis.</p> <div><ul class="text-lg flex flex-col gap-y-2"><li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Tempor erat elitr rebum at clita</li> <li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Aliqu diam amet diam et eos</li> <li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Clita duo justo magna dolore erat amet</li></ul></div> <a href="/" class="w-fit bg-logoIcon text-white flex px-4 py-3 rounded">Read More about Fixonn</a></div></div></div></div></section>  <section id="services" class="py-20 bg-[#FAFAFA]"><div class="mx-auto max-w-c-1390 px-6"><div class="font-mukta flex flex-col items-center animate_bottom" data-svelte-h="svelte-1teo2ms"><h3 class="text-logoIcon font-bold w-fit">SERVICES</h3> <h1 class="mt-4 text-5xl font-semibold text-black">How Fixonn helps you?</h1></div> <div class="grid grid-cols-3 gap-8 mt-20">${each$1(services, (service) => {
+                        nostrum perferendis.</p> <div><ul class="text-lg flex flex-col gap-y-2"><li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Tempor erat elitr rebum at clita</li> <li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Aliqu diam amet diam et eos</li> <li><i class="fa-solid fa-check mr-2 text-logoIcon"></i> Clita duo justo magna dolore erat amet</li></ul></div> <a href="/about" class="w-fit bg-logoIcon text-white flex px-4 py-3 rounded">Read More about Fixonn</a></div></div></div></div></section>  <section id="services" class="py-20 bg-[#FAFAFA]"><div class="mx-auto max-w-c-1390 px-6"><div class="font-mukta flex flex-col items-center animate_bottom" data-svelte-h="svelte-1teo2ms"><h3 class="text-logoIcon font-bold w-fit">SERVICES</h3> <h1 class="mt-4 text-5xl font-semibold text-black">How Fixonn helps you?</h1></div> <div class="grid grid-cols-3 gap-8 mt-20">${each$1(services, (service) => {
     return `<div class="text-white font-mukta animate_bottom"><div class="relative ease-in duration-300 rounded-md overflow-hidden service-card cursor-pointer svelte-41nvhv"><img${add_attribute("src", service.img, 0)}${add_attribute("alt", service.title, 0)}> <div class="absolute ease-in duration-300 bottom-[-60px] flex flex-col gap-y-4 p-4 w-full bg-[#000000]/[0.3] svelte-41nvhv"><h3 class="text-xl font-bold">${escape(service.title)}</h3> <a${add_attribute("href", service.url, 0)} class="w-fit bg-logoIcon text-white flex px-4 py-2 rounded">Know More</a> </div></div> </div>`;
   })}</div></div></section>  <section id="cta" class="svelte-41nvhv" data-svelte-h="svelte-lv7se0"><div class="mx-auto max-w-c-1390 px-6 py-20"><div class="animate_left border-[20px] rounded-md border-white/[0.1] h-fit w-[250px]"><div class="flex flex-col gap-y-8 w-[600px] pt-2 pl-6 pb-6 text-white"><h1 class="text-6xl font-bold leading-tight">Title for CTA of Fixonn<span class="text-logoIcon">.</span></h1> <p class="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Nobis possimus consequuntur asperiores ullam, quisquam
