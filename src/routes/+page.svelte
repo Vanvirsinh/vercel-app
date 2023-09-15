@@ -72,6 +72,7 @@
             img: "../../images/plumbing-icon-1.png",
             afterHoverImg: "../../images/plumbing-icon-2.png",
             isHovered: false,
+            url: "/services/plumbing",
         },
         {
             id: 2,
@@ -79,6 +80,7 @@
             img: "../../images/electrical-icon-1.png",
             afterHoverImg: "../../images/electrical-icon-2.png",
             isHovered: false,
+            url: "/services/electrical",
         },
         {
             id: 3,
@@ -86,6 +88,7 @@
             img: "../../images/pestcontrol-icon-1.png",
             afterHoverImg: "../../images/pestcontrol-icon-2.png",
             isHovered: false,
+            url: "/services/pest-control",
         },
         {
             id: 4,
@@ -93,6 +96,7 @@
             img: "../../images/cleaning-icon-1.png",
             afterHoverImg: "../../images/cleaning-icon-2.png",
             isHovered: false,
+            url: "/services/deep-cleaning",
         },
         {
             id: 5,
@@ -100,6 +104,7 @@
             img: "../../images/painting-icon-1.png",
             afterHoverImg: "../../images/painting-icon-2.png",
             isHovered: false,
+            url: "/services/painting",
         },
         {
             id: 6,
@@ -107,6 +112,7 @@
             img: "../../images/carpentry-icon-1.png",
             afterHoverImg: "../../images/carpentry-icon-2.png",
             isHovered: false,
+            url: "/services/carpentry",
         },
     ];
 
@@ -138,37 +144,37 @@
         {
             id: 1,
             title: "Plumbing Service",
-            url: "/",
+            url: "/services/plumbing",
             img: "https://plus.unsplash.com/premium_photo-1664301135901-383935f2104f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         },
         {
             id: 2,
             title: "Electrical Service",
-            url: "/",
+            url: "/services/electrical",
             img: "https://plus.unsplash.com/premium_photo-1664475006548-1baa3b7a1f84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         },
         {
             id: 3,
-            title: " Pest Control Service",
-            url: "/",
+            title: "Pest Control Service",
+            url: "/services/pest-control",
             img: "https://plus.unsplash.com/premium_photo-1661306473412-23ca865974dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         },
         {
             id: 4,
-            title: "Cleaning Service",
-            url: "/",
+            title: "Deep Cleaning Service",
+            url: "/services/deep-cleaning",
             img: "https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         },
         {
             id: 5,
             title: "Painting Service",
-            url: "/",
+            url: "/services/painting",
             img: "https://plus.unsplash.com/premium_photo-1679090841820-8e9b8480beb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         },
         {
             id: 6,
             title: "Carpentry Service",
-            url: "/",
+            url: "/services/carpentry",
             img: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UGx1bWJpbmclMjBzZXJ2aWNlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
         },
     ];
@@ -227,13 +233,15 @@
             <div
                 class="w-1/6 flex flex-col justify-center items-center gap-y-1"
             >
-                <img
-                    on:mouseenter={() => (icon.isHovered = true)}
-                    on:mouseleave={() => (icon.isHovered = false)}
-                    class="h-10 w-10 cursor-pointer"
-                    src={icon.isHovered ? icon.afterHoverImg : icon.img}
-                    alt={icon.name}
-                />
+                <a href={icon.url}>
+                    <img
+                        on:mouseenter={() => (icon.isHovered = true)}
+                        on:mouseleave={() => (icon.isHovered = false)}
+                        class="h-10 w-10 cursor-pointer"
+                        src={icon.isHovered ? icon.afterHoverImg : icon.img}
+                        alt={icon.name}
+                    />
+                </a>
                 <span class="text-sm text-[#757693]">{icon.name}</span>
             </div>
         {/each}
@@ -286,7 +294,7 @@
                         </ul>
                     </div>
                     <a
-                        href="/"
+                        href="/about"
                         class="w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
                         >Read More about Fixonn</a
                     >

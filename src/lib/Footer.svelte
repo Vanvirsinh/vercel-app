@@ -21,24 +21,70 @@
                 <h3 class="text-xl font-semibold mb-4">Services</h3>
                 <ul class="text-lightText">
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Plumbing
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/plumbing"
+                            on:click={() =>
+                                location.assign("/services/plumbing")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Plumbing</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Electrical
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/electrical"
+                            on:click={() =>
+                                location.assign("/services/electrical")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Electrical</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Pest
-                        Control
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/pest-control"
+                            on:click={() =>
+                                location.assign("/services/pest-control")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Pest Control</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Deep
-                        Cleaning
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/deep-cleaning"
+                            on:click={() =>
+                                location.assign("/services/deep-cleaning")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Deep Cleaning</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Painting
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/painting"
+                            on:click={() =>
+                                location.assign("/services/painting")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Painting</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-chevron-right text-xs mr-2" /> Carpentry
+                        <a
+                            class="hover:text-black hover:pl-2 ease-in duration-300"
+                            href="/services/carpentry"
+                            on:click={() =>
+                                location.assign("/services/carpentry")}
+                            ><i
+                                class="fa-solid fa-chevron-right text-xs mr-2"
+                            /> Carpentry</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -48,10 +94,18 @@
                 <h3 class="text-xl font-semibold mb-4">Contact</h3>
                 <ul class="text-lightText">
                     <li class="mb-2">
-                        <i class="fa-solid fa-envelope text-sm mr-2" /> your@example.com
+                        <a
+                            class="hover:text-black ease-in duration-300"
+                            href="mailto:your@example.com"
+                            ><i class="fa-solid fa-envelope text-sm mr-2" /> your@example.com</a
+                        >
                     </li>
                     <li class="mb-2">
-                        <i class="fa-solid fa-phone text-sm mr-2" /> (123) 456-7890
+                        <a
+                            class="hover:text-black ease-in duration-300"
+                            href="tel:+919998705371"
+                            ><i class="fa-solid fa-phone text-sm mr-2" /> (123) 456-7890</a
+                        >
                     </li>
                     <li class="mb-2">
                         <i class="fa-solid fa-location-dot text-sm mr-2" /> 123 Street
@@ -84,7 +138,7 @@
                     </li>
                     <li class="mb-2">
                         <a
-                            href="/"
+                            href="/#services"
                             class="hover:text-black hover:pl-2 ease-in duration-300"
                             ><i
                                 class="fa-solid fa-chevron-right text-xs mr-2"
@@ -93,7 +147,7 @@
                     </li>
                     <li class="mb-2">
                         <a
-                            href="/"
+                            href="/careers"
                             class="hover:text-black hover:pl-2 ease-in duration-300"
                             ><i
                                 class="fa-solid fa-chevron-right text-xs mr-2"
