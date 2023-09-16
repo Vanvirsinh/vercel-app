@@ -446,7 +446,12 @@
                 </div>
                 <div class="animate_right">
                     <div class="md:px-8 rounded-md">
-                        <form class="flex flex-col gap-y-4">
+                        <form
+                            class="flex flex-col gap-y-4"
+                            name="enquiry"
+                            method="POST"
+                            data-netlify="true"
+                        >
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
                                     >Your Name (Required)</label
@@ -454,6 +459,7 @@
                                 <input
                                     type="text"
                                     id="name"
+                                    name="name"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                 />
                             </div>
@@ -464,6 +470,7 @@
                                 <input
                                     type="email"
                                     id="email"
+                                    name="email"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                 />
                             </div>
@@ -474,6 +481,7 @@
                                 <input
                                     type="text"
                                     id="phone"
+                                    name="phone"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                 />
                             </div>
@@ -483,6 +491,7 @@
                                 >
                                 <select
                                     id="service"
+                                    name="service"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                 >
                                     <option value="plumbing">Plumbing</option>
@@ -504,6 +513,7 @@
                                     >Your Message</label
                                 >
                                 <textarea
+                                    name="message"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                     id="message"
                                     rows="5"
