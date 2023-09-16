@@ -147,7 +147,7 @@
                     </li>
                     <li class="mb-2">
                         <a
-                            href="/careers"
+                            href="/"
                             class="hover:text-black hover:pl-2 ease-in duration-300"
                             ><i
                                 class="fa-solid fa-chevron-right text-xs mr-2"

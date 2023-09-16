@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             <a
-                                href="/careers"
+                                href="/"
                                 class="font-normal hover:text-logoIcon ease-in duration-150"
                                 >Careers</a
                             >
