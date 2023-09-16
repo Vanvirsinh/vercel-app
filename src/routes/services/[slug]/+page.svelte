@@ -16,44 +16,44 @@
 
         currentService = load(currentServiceName);
 
-        const module = import("scrollreveal");
-        module.then((m) => {
-            ScrollReveal = m.default;
-            window.sr = ScrollReveal({
-                distance: "60px",
-                duration: 1000,
-                reset: false,
-            });
+        if (window.screen.availWidth > 890) {
+            const module = import("scrollreveal");
+            module.then((m) => {
+                ScrollReveal = m.default;
+                window.sr = ScrollReveal({
+                    distance: "60px",
+                    duration: 1000,
+                    reset: false,
+                });
 
-            sr.reveal(`.animate_top`, {
-                origin: "top",
-                interval: 100,
-            });
+                sr.reveal(`.animate_top`, {
+                    origin: "top",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_left`, {
-                origin: "left",
-                interval: 100,
-            });
+                sr.reveal(`.animate_left`, {
+                    origin: "left",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_right`, {
-                origin: "right",
-                interval: 100,
-            });
+                sr.reveal(`.animate_right`, {
+                    origin: "right",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_bottom`, {
-                origin: "bottom",
-                interval: 100,
+                sr.reveal(`.animate_bottom`, {
+                    origin: "bottom",
+                    interval: 100,
+                });
             });
-        });
+        }
     });
 </script>
 
 <svelte:head>
-    <title
-        >{currentService.subTitle
-            ? currentService.subTitle
-            : "Page not found!"}</title
-    >
+    <title>
+        {currentService.subTitle ? currentService.subTitle : "Page not found!"}
+    </title>
 </svelte:head>
 
 <!-- Individual Services -->
@@ -65,29 +65,37 @@
     rgba(19, 40, 76, 0.522)
 ),
 url({currentService.serviceBg});"
-        class="py-32"
+        class="py-20 md:py-32"
     >
         <div class="font-mukta flex flex-col items-center animate_bottom">
             <h3 class="text-logoIcon font-bold w-fit">FIXONN</h3>
-            <h1 class="mt-4 text-5xl font-semibold text-white">
+            <h1
+                class="mt-4 text-3xl text-center md:text-5xl font-semibold text-white"
+            >
                 {currentService.subTitle}
             </h1>
         </div>
     </section>
 
     <section id="services">
-        <div class="mx-auto max-w-c-1390 px-6 py-20 border-b border-[#e0e0e0]">
-            <div class="flex gap-x-8 font-mukta">
-                <div class="w-1/2 animate_left">
-                    <div class="h-full flex px-20 justify-center items-center">
+        <div
+            class="mx-auto max-w-c-1390 px-4 md:px-6 py-10 md:py-20 border-b border-[#e0e0e0]"
+        >
+            <div class="grid md:grid-cols-2 gap-4 font-mukta">
+                <div class="animate_left">
+                    <div
+                        class="h-full flex md:px-20 justify-center items-center"
+                    >
                         <img
                             src={currentService.serviceImg}
                             alt={currentService.title}
                         />
                     </div>
                 </div>
-                <div class="w-1/2 animate_right flex flex-col gap-y-5">
-                    <h1 class="font-bold text-5xl text-black uppercase">
+                <div class="animate_right flex flex-col gap-y-3 md:gap-y-5">
+                    <h1
+                        class="font-bold text-3xl md:text-5xl text-black uppercase"
+                    >
                         {currentService.title}
                     </h1>
                     <p class="text-md">
@@ -116,10 +124,10 @@ url({currentService.serviceBg});"
                 </div>
             </div>
             <div class="mt-20">
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
                     {#each currentService.subServiceImages as img}
                         <div
-                            class="p-10 bg-black/[0.05] rounded-md animate_bottom"
+                            class="p-5 md:p-10 bg-black/[0.05] rounded-md animate_bottom"
                         >
                             <img class="h-full" src={img.img} alt={img.title} />
                         </div>

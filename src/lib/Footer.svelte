@@ -1,5 +1,5 @@
 <footer class="bg-white text-black">
-    <div class="container mx-auto max-w-c-1390 font-mukta mb-10 pt-12">
+    <div class="container mx-auto max-w-c-1390 font-mukta pt-12">
         <div class="flex flex-wrap lg:flex-nowrap lg:gap-x-16 mx-4">
             <div class="w-full md:w-1/2 lg:w-1/4 mb-6">
                 <div class="mb-4">
@@ -169,7 +169,7 @@
     </div>
 
     <div
-        class="w-full mx-auto max-w-c-1390 font-mukta border-t border-[#e0e0e0] py-4 text-lightText"
+        class="w-full mx-auto max-w-c-1390 font-mukta border-t border-[#e0e0e0] p-4 text-lightText"
     >
         <div class="flex justify-between items-center">
             <p class="text-opacity-75">

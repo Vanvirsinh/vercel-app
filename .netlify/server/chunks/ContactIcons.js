@@ -5,7 +5,7 @@ const BackToTop = create_ssr_component(($$result, $$props, $$bindings, slots) =>
     $$bindings.pathName(pathName);
   return `<section${add_attribute(
     "class",
-    `${"-bottom-20 -right-20"} ease-in duration-300 back-to-top fixed`,
+    `${"-bottom-20 -right-20"} ease-in duration-300 back-to-top fixed z-20`,
     0
   )}><div><a${add_attribute("href", pathName, 0)} class="hover:bg-logoIcon active:bg-logoText border border-[#E0E0E0] ease-in duration-200 hover:text-white flex justify-center items-center h-10 w-10 rounded bg-white text-[#757693]"><i class="fa-solid fa-chevron-up"></i></a></div></section>`;
 });

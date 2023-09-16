@@ -29,7 +29,7 @@
                     class="h-[90%] mx-auto max-w-c-1390 px-6 flex gap-y-4 justify-center flex-col font-mukta"
                 >
                     <h1
-                        class="text-6xl font-bold text-white lg:w-1/2 leading-tight"
+                        class="text-5xl md:text-6xl font-bold text-white lg:w-1/2 leading-tight"
                     >
                         Heading for the first slide<span class="text-logoIcon"
                             >.</span
@@ -55,7 +55,7 @@
                     class="h-[90%] mx-auto max-w-c-1390 px-6 flex gap-y-4 justify-center flex-col font-mukta"
                 >
                     <h1
-                        class="text-6xl font-bold text-white lg:w-1/2 leading-tight"
+                        class="text-5xl md:text-6xl font-bold text-white lg:w-1/2 leading-tight"
                     >
                         Heading for the first slide<span class="text-logoIcon"
                             >.</span
@@ -81,7 +81,7 @@
                     class="h-[90%] mx-auto max-w-c-1390 px-6 flex gap-y-4 justify-center flex-col font-mukta"
                 >
                     <h1
-                        class="text-6xl font-bold text-white lg:w-1/2 leading-tight"
+                        class="text-5xl md:text-6xl font-bold text-white lg:w-1/2 leading-tight"
                     >
                         Heading for the first slide<span class="text-logoIcon"
                             >.</span
@@ -110,7 +110,8 @@
     }
 
     .swiper-container {
-        width: 100%;
+        overflow: hidden;
+        max-width: 100vw;
         height: 550px;
         position: relative;
         cursor: w-resize;
@@ -138,5 +139,10 @@
                 rgba(0, 0, 0, 0.326)
             ),
             url("https://urbango.qodeinteractive.com/wp-content/uploads/2018/09/h1-slide-2.jpg");
+    }
+    @media only screen and (max-width: 700px) {
+        .swiper-pagination {
+            bottom: 30px !important;
+        }
     }
 </style>

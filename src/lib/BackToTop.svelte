@@ -18,7 +18,7 @@
 <section
     class={`${
         shouldVisible ? "bottom-5 right-5" : "-bottom-20 -right-20"
-    } ease-in duration-300 back-to-top fixed`}
+    } ease-in duration-300 back-to-top fixed z-20`}
 >
     <div>
         <a

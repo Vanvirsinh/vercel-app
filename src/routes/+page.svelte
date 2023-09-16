@@ -2,44 +2,59 @@
     import Hero from "$lib/Home/Hero.svelte";
     import BackToTop from "$lib/BackToTop.svelte";
     import ContactIcons from "$lib/ContactIcons.svelte";
+    import Form from "$lib/Form.svelte";
     import Swiper, { Pagination, Autoplay } from "swiper";
     import "swiper/swiper-bundle.min.css";
     import { onMount } from "svelte";
 
     let testimonial01;
     let ScrollReveal;
+    let isVisible = false;
+
+    function showForm() {
+        if (!isVisible) {
+            isVisible = true;
+        }
+    }
+    function hideForm() {
+        if (isVisible) {
+            isVisible = false;
+        }
+    }
 
     onMount(() => {
-        const module = import("scrollreveal");
-        module.then((m) => {
-            ScrollReveal = m.default;
-            /*========== SCROLL REVEAL ANIMATION ==========*/
-            window.sr = ScrollReveal({
-                distance: "60px",
-                duration: 1000,
-                reset: false,
-            });
+        if (window.screen.availWidth > 890) {
+            const module = import("scrollreveal");
+            module.then((m) => {
+                ScrollReveal = m.default;
+                /*========== SCROLL REVEAL ANIMATION ==========*/
+                window.sr = ScrollReveal({
+                    distance: "60px",
+                    duration: 1000,
+                    reset: false,
+                });
 
-            sr.reveal(`.animate_top`, {
-                origin: "top",
-                interval: 100,
-            });
+                sr.reveal(`.animate_top`, {
+                    origin: "top",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_left`, {
-                origin: "left",
-                interval: 100,
-            });
+                sr.reveal(`.animate_left`, {
+                    origin: "left",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_right`, {
-                origin: "right",
-                interval: 100,
-            });
+                sr.reveal(`.animate_right`, {
+                    origin: "right",
+                    interval: 100,
+                });
 
-            sr.reveal(`.animate_bottom`, {
-                origin: "bottom",
-                interval: 100,
+                sr.reveal(`.animate_bottom`, {
+                    origin: "bottom",
+                    interval: 100,
+                });
             });
-        });
+        }
 
         testimonial01 = new Swiper(".testimonial-01", {
             modules: [Pagination, Autoplay],
@@ -226,18 +241,20 @@
 
 <!-- Services Intro -->
 <div
-    class="animate_bottom relative mx-auto max-w-c-1390 px-6 -translate-y-2/4 z-10"
+    class="animate_bottom relative mx-auto lg:max-w-c-1390 px-4 md:px-6 my-4 sm:my-10 md:my-0 md:-translate-y-2/4 z-10 sm:-translate-y-3/4 -translate-y-1/4"
 >
-    <div class="bg-white flex py-6 px-40 border border-[#e0e0e0] rounded-md">
+    <div
+        class="bg-white justify-center gap-y-4 lg:gap-y-6 flex flex-wrap py-4 lg:py-6 lg:px-40 md:px-20 px-4 border border-[#e0e0e0] rounded-md"
+    >
         {#each icons as icon}
             <div
-                class="w-1/6 flex flex-col justify-center items-center gap-y-1"
+                class="flex lg:px-12 md:px-6 sm:px-4 px-2 flex-col justify-center items-center gap-y-1"
             >
                 <a href={icon.url}>
                     <img
                         on:mouseenter={() => (icon.isHovered = true)}
                         on:mouseleave={() => (icon.isHovered = false)}
-                        class="h-10 w-10 cursor-pointer"
+                        class="h-6 w-6 md:h-10 md:w-10 sm:h-8 sm:h-6 cursor-pointer"
                         src={icon.isHovered ? icon.afterHoverImg : icon.img}
                         alt={icon.name}
                     />
@@ -250,21 +267,21 @@
 
 <!-- About -->
 <section id="about" class="pb-10">
-    <div class="mx-auto max-w-c-1390 px-6">
-        <div class="grid grid-cols-2 gap-8 mt-4">
+    <div class="mx-auto max-w-c-1390 px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
             <div class="animate_left">
                 <div class="p-2 flex justify-center items-center">
                     <img
-                        class="h-[450px]"
+                        class="w-full md:w-auto md:h-[450px]"
                         src="../../images/52057.jpg"
                         alt=""
                     />
                 </div>
             </div>
             <div class="font-mukta animate_right">
-                <div class="flex flex-col gap-y-5">
+                <div class="flex flex-col gap-y-3 md:gap-y-5">
                     <h3 class="text-logoIcon font-bold w-fit">ABOUT</h3>
-                    <h1 class="text-5xl font-semibold text-black">
+                    <h1 class="text-3xl md:text-5xl font-semibold text-black">
                         What is Fixonn?
                     </h1>
                     <p class="text-lg">
@@ -295,7 +312,7 @@
                     </div>
                     <a
                         href="/about"
-                        class="w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
+                        class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
                         >Read More about Fixonn</a
                     >
                 </div>
@@ -305,15 +322,19 @@
 </section>
 
 <!-- Services -->
-<section id="services" class="py-20 bg-[#FAFAFA]">
-    <div class="mx-auto max-w-c-1390 px-6">
+<section id="services" class="py-10 md:py-20 bg-[#FAFAFA]">
+    <div class="mx-auto max-w-c-1390 px-4 md:px-6">
         <div class="font-mukta flex flex-col items-center animate_bottom">
             <h3 class="text-logoIcon font-bold w-fit">SERVICES</h3>
-            <h1 class="mt-4 text-5xl font-semibold text-black">
+            <h1
+                class="mt-4 text-3xl md:text-5xl text-center font-semibold text-black"
+            >
                 How Fixonn helps you?
             </h1>
         </div>
-        <div class="grid grid-cols-3 gap-8 mt-20">
+        <div
+            class="grid gird-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8 mt-10 md:mt-20"
+        >
             {#each services as service}
                 <div class="text-white font-mukta animate_bottom">
                     <div
@@ -338,26 +359,26 @@
 </section>
 
 <!-- CTA -->
-<section id="cta">
-    <div class="mx-auto max-w-c-1390 px-6 py-20">
+<section id="cta" class="bg-cover md:bg-contain">
+    <div class="mx-auto max-w-c-1390 px-0 md:px-6 py-10 md:py-20">
         <div
-            class="animate_left border-[20px] rounded-md border-white/[0.1] h-fit w-[250px]"
+            class="animate_left border-[15px] md:border-[20px] rounded-md border-white/[0.1] h-fit w-[50%] sm:w-[200px] md:w-[250px]"
         >
             <div
-                class="flex flex-col gap-y-8 w-[600px] pt-2 pl-6 pb-6 text-white"
+                class="flex flex-col gap-y-4 md:gap-y-8 w-[300px] sm:w-[450px] md:w-[600px] pt-2 pl-2 pb-2 md:pl-6 md:pb-6 text-white"
             >
-                <h1 class="text-6xl font-bold leading-tight">
+                <h1 class="text-3xl md:text-6xl font-bold leading-tight">
                     Title for CTA of Fixonn<span class="text-logoIcon">.</span>
                 </h1>
-                <p class="text-lg">
+                <p class="text-md md:text-lg">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Nobis possimus consequuntur asperiores ullam, quisquam
                     omnis?
                 </p>
-                <a
-                    href="/"
-                    class="w-fit border-2 border-logoIcon bg-logoIcon text-white flex px-4 py-3 rounded"
-                    >Send Us an Enquiry</a
+                <button
+                    on:click={showForm}
+                    class="w-fit border-2 outline-none border-logoIcon bg-logoIcon active:bg-black text-white flex px-3 py-2 md:px-4 md:py-3 rounded"
+                    >Send Us an Enquiry</button
                 >
             </div>
         </div>
@@ -365,18 +386,22 @@
 </section>
 
 <!-- Features -->
-<section id="features" class="bg-[#FAFAFA] relative">
-    <div class="mx-auto max-w-c-1390 px-6 py-20">
+<section id="features" class="bg-[#FAFAFA] relative py-10 md:py-20">
+    <div class="mx-auto max-w-c-1390 px-4 md:px-6">
         <div class="font-mukta flex flex-col items-center animate_bottom">
             <h3 class="text-logoIcon font-bold w-fit">FEATURES</h3>
-            <h1 class="mt-4 text-5xl font-semibold text-black">
+            <h1
+                class="mt-4 text-3xl md:text-5xl text-center font-semibold text-black"
+            >
                 Why to Choose Fixonn?
             </h1>
         </div>
-        <div class="flex mt-20 gap-x-8">
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-8 sm:mt-10 md:mt-20 gap-5 md:gap-8"
+        >
             {#each features as feature}
                 <div
-                    class="animate_bottom w-1/3 flex flex-col items-center gap-y-4 p-8 bg-white border border-[#E0E0E0] rounded-md"
+                    class="animate_bottom flex flex-col items-center gap-y-4 p-6 sm:p-8 bg-white border border-[#E0E0E0] rounded-md"
                 >
                     <h2 class="text-2xl text-black font-semibold">
                         {feature.title}
@@ -397,26 +422,30 @@
 
 <!-- Send Enquiry-->
 <section id="enquiryForm" class="bg-white">
-    <div class="mx-auto max-w-c-1390 px-6 py-20">
+    <div class="mx-auto max-w-c-1390 px-4 md:px-6 py-10 md:py-20">
         <div>
-            <div class="flex gap-x-8 font-mukta">
-                <div class="w-1/2 animate_left">
-                    <div class="font-mukta flex flex-col">
+            <div class="grid md:grid-cols-2 gap-6 font-mukta">
+                <div class="animate_left">
+                    <div
+                        class="font-mukta flex flex-col items-center md:items-start"
+                    >
                         <h3 class="text-logoIcon font-bold w-fit">ENQUIRY</h3>
-                        <h1 class="mt-4 text-5xl font-semibold text-black">
+                        <h1
+                            class="text-center md:text-start mt-4 text-3xl md:text-5xl font-semibold text-black"
+                        >
                             How you can reach out to Fixonn?
                         </h1>
                     </div>
-                    <div class="mt-10 px-6 flex items-center">
+                    <div class="mt-10 flex items-center justify-center">
                         <img
-                            class="h-[450px]"
+                            class="w-full h-auto md:w-auto md:h-[450px]"
                             src="../../images/5127314.jpg"
                             alt=""
                         />
                     </div>
                 </div>
-                <div class="w-1/2 animate_right">
-                    <div class="border-0 border-[#E0E0E0] px-8 rounded-md">
+                <div class="animate_right">
+                    <div class="md:px-8 rounded-md">
                         <form class="flex flex-col gap-y-4">
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
@@ -459,7 +488,7 @@
                                     <option value="plumbing">Plumbing</option>
                                     <option value="plumbing">Electrical</option>
                                     <option value="pest control"
-                                        >Pest control</option
+                                        >Pest Control</option
                                     >
                                     <option
                                         value="deep cleaning
@@ -505,14 +534,16 @@
 
 <!-- Customer Review -->
 <section id="testimonials" class="bg-[#FAFAFA]">
-    <div class="mx-auto max-w-c-1390 px-6 py-20 overflow-hidden">
+    <div class="mx-auto max-w-c-1390 px-6 py-10 md:py-20 overflow-hidden">
         <div class="font-mukta flex flex-col items-center animate_bottom">
             <h3 class="text-logoIcon font-bold w-fit">TESTIMONIAL</h3>
-            <h1 class="mt-4 text-5xl font-semibold text-black">
+            <h1
+                class="mt-4 text-center text-3xl md:text-5xl font-semibold text-black"
+            >
                 What Users say about Fixonn?
             </h1>
         </div>
-        <div class="testimonial-01 mt-20">
+        <div class="testimonial-01 mt-10 md:mt-20">
             <div class="swiper-wrapper animate_bottom">
                 {#each reviews as review}
                     <div
@@ -559,6 +590,7 @@
 <!-- Other Absolute Components -->
 <BackToTop pathName="/" />
 <ContactIcons />
+<Form {isVisible} {hideForm} />
 
 <style>
     .service-card:hover {
@@ -576,7 +608,6 @@
             url("https://img.freepik.com/free-photo/tiler-working-renovation-apartment_23-2149278561.jpg?w=1060&t=st=1694526270~exp=1694526870~hmac=2884e96890326b2451f0d2efa59f6383eba869d87a05fde94e2b7144c9bb6c48");
         background-position: 100% 100%;
         background-repeat: no-repeat;
-        background-size: contain;
     }
     :root {
         --swiper-theme-color: #181c31;
