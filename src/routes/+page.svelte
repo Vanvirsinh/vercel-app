@@ -451,7 +451,6 @@
                             name="enquiry"
                             method="POST"
                             data-netlify="true"
-                            action="https://fixonn.netlify.app/"
                         >
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
@@ -597,24 +596,6 @@
         </div>
     </div>
 </section>
-
-<form name="contact" method="POST" data-netlify="true">
-    <p>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" />
-    </p>
-    <p>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" />
-    </p>
-    <p>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" />
-    </p>
-    <p>
-        <button type="submit">Send</button>
-    </p>
-</form>
 
 <!-- Other Absolute Components -->
 <BackToTop pathName="/" />
