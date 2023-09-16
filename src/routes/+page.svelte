@@ -451,6 +451,7 @@
                             name="enquiry"
                             method="POST"
                             data-netlify="true"
+                            action="https://fixonn.netlify.app/"
                         >
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
