@@ -115,7 +115,6 @@
                         data-netlify="true"
                         class="flex flex-col gap-y-4"
                         data-netlify-honeypot="bot-field"
-                        action="/"
                     >
                         <input type="hidden" name="bot-field" />
                         <div class="flex flex-col sm:flex-row gap-4">
