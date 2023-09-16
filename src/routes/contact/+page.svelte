@@ -114,9 +114,13 @@
                         method="POST"
                         data-netlify="true"
                         class="flex flex-col gap-y-4"
-                        data-netlify-honeypot="bot-field"
+                        netlify-honeypot="bot-field"
                     >
-                        <input type="hidden" name="bot-field" />
+                        <input
+                            type="hidden"
+                            name="myContacts"
+                            value="contact"
+                        />
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input
                                 name="name"
