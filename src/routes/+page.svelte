@@ -450,8 +450,15 @@
                             class="flex flex-col gap-y-4"
                             name="enquiry"
                             method="POST"
+                            netlify
                             data-netlify="true"
+                            data-netlify-honeypot="bot-field"
                         >
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="enquiry"
+                            />
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
                                     >Your Name (Required)</label
