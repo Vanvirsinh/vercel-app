@@ -110,17 +110,14 @@
                         </h1>
                     </div>
                     <form
+                        class="flex flex-col gap-y-4"
                         name="contact"
                         method="POST"
+                        netlify
                         data-netlify="true"
-                        class="flex flex-col gap-y-4"
-                        netlify-honeypot="bot-field"
+                        data-netlify-honeypot="bot-field"
                     >
-                        <input
-                            type="hidden"
-                            name="myContacts"
-                            value="contact"
-                        />
+                        <input type="hidden" name="form-name" value="contact" />
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input
                                 name="name"
