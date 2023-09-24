@@ -134,24 +134,24 @@
     let features = [
         {
             id: 1,
-            title: "Multi-Vendor Services",
+            title: "Expert Craftsmanship",
             img: "../../images/multi-services.gif",
             description:
-                " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis nostrum laborum necessitatibus aspernatur quam iure.",
+                "Our skilled professionals bring years of experience to every project, ensuring top-notch quality and precision in every service.",
         },
         {
             id: 2,
-            title: "Quality Services",
-            img: "../../images/quality-service.gif",
+            title: "Customer-Centric Approach",
+            img: "../../images/profession-service.gif",
             description:
-                " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis nostrum laborum necessitatibus aspernatur quam iure.",
+                "Your satisfaction is our priority. We're committed to providing transparent, timely, and reliable services, tailored to your preferences.",
         },
         {
             id: 3,
-            title: "Profession Service",
-            img: "../../images/profession-service.gif",
+            title: "Wide Range of Services",
+            img: "../../images/quality-service.gif",
             description:
-                " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit perspiciatis nostrum laborum necessitatibus aspernatur quam iure.",
+                "From plumbing emergencies to home renovations, we offer a comprehensive suite of services to meet all your household needs.",
         },
     ];
 
@@ -160,31 +160,31 @@
             id: 1,
             title: "Plumbing Service",
             url: "/services/plumbing",
-            img: "https://plus.unsplash.com/premium_photo-1664301135901-383935f2104f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            img: "../images/services_plumber.jpg",
         },
         {
             id: 2,
             title: "Electrical Service",
             url: "/services/electrical",
-            img: "https://plus.unsplash.com/premium_photo-1664475006548-1baa3b7a1f84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            img: "../images/services_electrician.jpg",
         },
         {
             id: 3,
             title: "Pest Control Service",
             url: "/services/pest-control",
-            img: "https://plus.unsplash.com/premium_photo-1661306473412-23ca865974dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            img: "../images/services_pest_control.jpg",
         },
         {
             id: 4,
             title: "Deep Cleaning Service",
             url: "/services/deep-cleaning",
-            img: "https://images.unsplash.com/photo-1482449609509-eae2a7ea42b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            img: "../images/services_deep_cleaning.jpg",
         },
         {
             id: 5,
             title: "Painting Service",
             url: "/services/painting",
-            img: "https://plus.unsplash.com/premium_photo-1679090841820-8e9b8480beb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            img: "../images/services_painting.jpeg",
         },
         {
             id: 6,
@@ -198,33 +198,33 @@
         {
             userImage:
                 "https://classsolution.netlify.app/images/tst-image1.jpg",
-            userName: "John Doe",
-            userDesignation: "Developer",
-            review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            userName: "Rajesh Kumar",
+            userDesignation: "IT Manager",
+            review: "Impressed by Fixonn's prompt service. Their electrician fixed my issue swiftly. Highly recommended!",
             stars: [1, 2, 3, 4, 5],
         },
         {
             userImage:
                 "https://classsolution.netlify.app/images/tst-image2.jpg",
-            userName: "Selena Gomez",
-            userDesignation: "Manager",
-            review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            userName: "Meena Patel",
+            userDesignation: "Business Owner",
+            review: "Fantastic plumbing service! Solved a major leak in no time. Thank you, Fixonn!",
             stars: [1, 2, 3],
         },
         {
             userImage:
                 "https://classsolution.netlify.app/images/tst-image3.jpg",
-            userName: "Taylor Swift",
-            userDesignation: "Director",
-            review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            userName: "Sneha Kumari",
+            userDesignation: "Homemaker",
+            review: "Pest control service by Fixonn worked wonders! No more creepy crawlies in our home. Very happy!",
             stars: [1, 2, 3, 4],
         },
         {
             userImage:
                 "https://classsolution.netlify.app/images/tst-image4.jpg",
-            userName: "Justin Bieber",
-            userDesignation: "Advisor",
-            review: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            userName: "Amit Sharma",
+            userDesignation: "Teacher",
+            review: "Painters from Fixonn transformed my office space beautifully. Great attention to detail.",
             stars: [1, 2, 3, 4, 5],
         },
     ];
@@ -285,36 +285,43 @@
                         What is Fixonn?
                     </h1>
                     <p class="text-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quos repudiandae modi, iste voluptatibus similique
-                        doloremque ullam, ad amet est numquam exercitationem!
-                        Laudantium qui repellat tempora deleniti nam, molestias
-                        nostrum perferendis.
+                        With the growing need for on-demand services, the home
+                        services market segment is coming up with innovative
+                        ways to keep up with the ongoing market trends. Fixonn
+                        is a feasible online platform providing in-house home
+                        improvement services for homeowners in Bangalore.
                     </p>
                     <div>
                         <ul class="text-lg flex flex-col gap-y-2">
                             <li>
                                 <i
                                     class="fa-solid fa-check mr-2 text-logoIcon"
-                                /> Tempor erat elitr rebum at clita
+                                /> Door-to-door service
                             </li>
                             <li>
                                 <i
                                     class="fa-solid fa-check mr-2 text-logoIcon"
-                                /> Aliqu diam amet diam et eos
+                                /> The experienced professionals
                             </li>
                             <li>
                                 <i
                                     class="fa-solid fa-check mr-2 text-logoIcon"
-                                /> Clita duo justo magna dolore erat amet
+                                /> A complete range of support
                             </li>
                         </ul>
                     </div>
-                    <a
-                        href="/about"
-                        class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
-                        >Read More about Fixonn</a
-                    >
+                    <div class="flex gap-3">
+                        <a
+                            href="/about"
+                            class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
+                            >Read More about Fixonn</a
+                        >
+                        <a
+                            href="/how-fixonn-works"
+                            class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
+                            >How Fixonn Works</a
+                        >
+                    </div>
                 </div>
             </div>
         </div>
@@ -368,17 +375,19 @@
                 class="flex flex-col gap-y-4 md:gap-y-8 w-[300px] sm:w-[450px] md:w-[600px] pt-2 pl-2 pb-2 md:pl-6 md:pb-6 text-white"
             >
                 <h1 class="text-3xl md:text-6xl font-bold leading-tight">
-                    Title for CTA of Fixonn<span class="text-logoIcon">.</span>
+                    Not able to figure out the issue<span class="text-logoIcon"
+                        >?</span
+                    >
                 </h1>
                 <p class="text-md md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nobis possimus consequuntur asperiores ullam, quisquam
-                    omnis?
+                    Experience hassle-free home services with Fixonn! From
+                    carpentry to plumbing, we've got you covered. Book now for
+                    quality solutions.
                 </p>
                 <button
                     on:click={showForm}
                     class="w-fit border-2 outline-none border-logoIcon bg-logoIcon active:bg-black text-white flex px-3 py-2 md:px-4 md:py-3 rounded"
-                    >Send Us an Enquiry</button
+                    >Book a Fixomann</button
                 >
             </div>
         </div>
@@ -622,7 +631,7 @@
                 rgb(26, 26, 26) 50%,
                 rgba(0, 0, 0, 0)
             ),
-            url("https://img.freepik.com/free-photo/tiler-working-renovation-apartment_23-2149278561.jpg?w=1060&t=st=1694526270~exp=1694526870~hmac=2884e96890326b2451f0d2efa59f6383eba869d87a05fde94e2b7144c9bb6c48");
+            url("../images/working-renovation.jpg");
         background-position: 100% 100%;
         background-repeat: no-repeat;
     }

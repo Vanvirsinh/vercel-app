@@ -57,19 +57,19 @@
     transition:slide
     class={`${
         shouldVisible ? "sticky navbar-animation" : "relative"
-    } top-0 bg-white z-50 shadow-sm relative`}
+    } top-0 bg-black z-50 shadow-sm relative`}
 >
     <div class="flex justify-between px-6 py-3 items-center font-mukta">
         <div class="logo">
             <a href="/">
-                <!-- <img
+                <img
                     class="h-14 w-auto"
                     src="../../images/logo-transparent.png"
                     alt=""
-                /> -->
-                <h1 class="text-3xl font-bold font-mukta">
+                />
+                <!-- <h1 class="text-3xl font-bold font-mukta">
                     Fixonn<span class="text-logoIcon">.</span>
-                </h1>
+                </h1> -->
             </a>
         </div>
         <button
@@ -82,7 +82,7 @@
         {#if isSubMenuVisible}
             <div transition:slide id="menus" class="menus flex">
                 <div class="sub-menu flex items-center mr-8">
-                    <ul class="flex gap-x-8 font-regular">
+                    <ul class="flex gap-x-8 font-regular text-white">
                         <li>
                             <a
                                 href="/"
@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             <a
-                                href="/"
+                                href="/careers"
                                 class="font-normal hover:text-logoIcon ease-in duration-150"
                                 >Careers</a
                             >
@@ -136,7 +136,6 @@
 <style>
     .navbar-animation {
         animation: navbar 0.5s alternate;
-        background-color: #1a1a1a;
         color: #fff;
     }
 

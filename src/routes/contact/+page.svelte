@@ -66,9 +66,9 @@
                 Let us Know how we can help you?
             </h1>
             <p class="md:w-1/2 text-center text-[#757693]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                eligendi, velit, neque deserunt ipsam quod, voluptatum minima
-                corrupti mollitia maiores ex unde magnam quis reiciendis?
+                We value your feedback and inquiries. Reach out to Fixonn's
+                dedicated support team. We're here to assist you promptly and
+                ensure your home service experience is exceptional.
             </p>
         </div>
         <!-- Contact Details -->
@@ -109,15 +109,7 @@
                             Let us know if you have anything to share with us.
                         </h1>
                     </div>
-                    <form
-                        class="flex flex-col gap-y-4"
-                        name="contact"
-                        method="POST"
-                        netlify
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                    >
-                        <input type="hidden" name="form-name" value="contact" />
+                    <form class="flex flex-col gap-y-4">
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input
                                 name="name"

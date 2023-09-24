@@ -59,7 +59,12 @@
         <div class="grid md:grid-cols-2 gap-4 md:gap-8 font-mukta">
             <div class="animate_left">
                 <div>
-                    <img src="../images/2663543.jpg" alt="" />
+                    <!-- <img src="../images/2663543.jpg" alt="" /> -->
+                    <img
+                        src="../images/bg_illustration.jpeg"
+                        class="rounded-md"
+                        alt=""
+                    />
                 </div>
             </div>
             <div class="animate_right flex flex-col gap-y-3 md:gap-y-5">
@@ -276,7 +281,8 @@
                 rgba(19, 40, 76, 0.575),
                 rgba(19, 40, 76, 0.322)
             ),
-            url("https://img.freepik.com/free-photo/business-people-casual-meeting_53876-101882.jpg?w=1380&t=st=1694603181~exp=1694603781~hmac=dff0a1237fcf394e1e20cdfcb85e98b8e7b582070e7207a925047006595e3ce7");
+            url("../images/business-people-casual-meeting.jpg");
         background-position: center;
+        background-size: cover;
     }
 </style>

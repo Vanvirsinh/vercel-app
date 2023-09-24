@@ -10,9 +10,9 @@
                     />
                 </div>
                 <p class="text-lightText text-md">
-                    Your company's mission statement or a brief description can
-                    go here. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Ipsa nesciunt perspiciatis, ipsum harum neque officia!
+                    At Fixonn, we are dedicated to enhancing the quality of your
+                    home life. With a team of skilled professionals, we provide
+                    top-notch services, ensuring your comfort and peace of mind.
                 </p>
             </div>
 
@@ -147,7 +147,7 @@
                     </li>
                     <li class="mb-2">
                         <a
-                            href="/"
+                            href="/careers"
                             class="hover:text-black hover:pl-2 ease-in duration-300"
                             ><i
                                 class="fa-solid fa-chevron-right text-xs mr-2"
