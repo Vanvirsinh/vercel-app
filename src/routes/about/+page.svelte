@@ -287,7 +287,7 @@
                 rgba(19, 40, 76, 0.575),
                 rgba(19, 40, 76, 0.322)
             ),
-            url("../images/business-people-casual-meeting.jpg");
+            url("https://fixonn.netlify.app/images/business-people-casual-meeting.jpg");
         background-position: center;
         background-size: cover;
     }

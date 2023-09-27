@@ -692,7 +692,7 @@
                 rgb(26, 26, 26) 50%,
                 rgba(0, 0, 0, 0)
             ),
-            url("../images/working-renovation.jpg");
+            url("https://fixonn.netlify.app/images/working-renovation.jpg");
         background-position: 100% 100%;
         background-repeat: no-repeat;
     }

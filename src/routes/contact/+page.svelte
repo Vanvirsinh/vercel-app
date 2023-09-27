@@ -245,7 +245,7 @@
                 rgba(19, 40, 76, 0.775),
                 rgba(19, 40, 76, 0.322)
             ),
-            url("../images/businessman-big-office.jpg");
+            url("https://fixonn.netlify.app/images/businessman-big-office.jpg");
         background-position: center;
         background-size: cover;
     }

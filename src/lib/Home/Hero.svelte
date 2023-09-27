@@ -122,21 +122,21 @@
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/bg-slid-1.jpeg");
+            url("https://fixonn.netlify.app/images/bg-slid-1.jpeg");
     }
     .item-2 {
         background-image: linear-gradient(
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/bg-slid-2.jpeg");
+            url("https://fixonn.netlify.app/images/bg-slid-2.jpeg");
     }
     .item-3 {
         background-image: linear-gradient(
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/bg-slid-3.jpeg");
+            url("https://fixonn.netlify.app/images/bg-slid-3.jpeg");
     }
     @media only screen and (max-width: 700px) {
         .swiper-pagination {
