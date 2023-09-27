@@ -22,7 +22,7 @@
     <div class="flex flex-col gap-y-2 h-fit">
         <div>
             <a
-                href="https://api.whatsapp.com/send?phone=+919998705371"
+                href="https://api.whatsapp.com/send?phone=+918296603137"
                 class="h-full w-10 p-1 inline-block"
             >
                 <img
@@ -33,7 +33,7 @@
             >
         </div>
         <div>
-            <a href="tel:9998705371" class="h-full w-10 p-1 inline-block">
+            <a href="tel:+918296603137" class="h-full w-10 p-1 inline-block">
                 <img
                     class="h-full"
                     src="../images/ringer-2.gif"

@@ -123,7 +123,7 @@
                 <div class="flex call-btn-div">
                     <a
                         class="active:bg-transperent active:text-logoIcon ease-in duration-50 border-2 border-logoIcon bg-logoIcon text-white flex px-4 py-2 rounded"
-                        href="tel:9998705371"
+                        href="tel:+918296603137"
                         ><span class="material-icons mr-2"> call </span> Call Us
                         Now</a
                     >

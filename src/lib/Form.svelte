@@ -2,6 +2,27 @@
     import { fade, slide } from "svelte/transition";
     export let isVisible = true;
     export let hideForm;
+    export let handleSubmit;
+    export let isSubmitting;
+
+    let name = "";
+    let email = "";
+    let phone = "";
+    let message = "";
+    let service = "plumbing";
+
+    function resetForm() {
+        name = "";
+        email = "";
+        phone = "";
+        service = "plumbing";
+        message = "";
+    }
+
+    async function handleSubmitEnquiry(event) {
+        handleSubmit(event);
+        resetForm();
+    }
 
     function handleKeyPress(event) {
         if (event.key === "Escape") {
@@ -51,33 +72,47 @@
                                     </h1>
                                     <form
                                         class="flex flex-col gap-y-3 md:gap-y-4"
+                                        on:submit|preventDefault={handleSubmitEnquiry}
+                                        method="POST"
+                                        action="/?/createEnquiry"
                                     >
                                         <div class="flex gap-x-3 md:gap-x-4">
                                             <input
+                                                bind:value={name}
+                                                name="name"
                                                 placeholder="Enter your name"
                                                 type="text"
                                                 class="w-1/2 rounded-md p-2 md:p-3 border border-[#E0E0E0]"
+                                                required
                                             />
                                             <input
+                                                bind:value={email}
+                                                name="email"
                                                 placeholder="Enter your email(optional)"
                                                 type="email"
                                                 class="w-1/2 rounded-md p-2 md:p-3 border border-[#E0E0E0]"
+                                                required
                                             />
                                         </div>
                                         <div class="flex gap-x-3 md:gap-x-4">
                                             <input
+                                                bind:value={phone}
+                                                name="phone"
                                                 placeholder="Enter your phone"
                                                 type="text"
                                                 class="w-1/2 rounded-md p-2 md:p-3 border border-[#E0E0E0]"
+                                                required
                                             />
                                             <select
+                                                bind:value={service}
+                                                name="service"
                                                 id="service"
                                                 class="w-1/2 border border-[#E0E0E0] rounded-md p-2 md:p-3"
                                             >
                                                 <option value="plumbing"
                                                     >Plumbing</option
                                                 >
-                                                <option value="plumbing"
+                                                <option value="electrical"
                                                     >Electrical</option
                                                 >
                                                 <option value="pest control"
@@ -98,19 +133,30 @@
                                         </div>
                                         <div>
                                             <textarea
+                                                bind:value={message}
+                                                name="message"
                                                 placeholder="Enter your message..."
                                                 class="w-full rounded-md p-2 md:p-3 border border-[#E0E0E0]"
                                                 rows="5"
+                                                required
                                             />
                                         </div>
                                         <div>
                                             <button
+                                                disabled={isSubmitting}
                                                 type="submit"
                                                 class="bg-logoIcon px-6 py-3 text-white rounded-md"
-                                                >Send Enquiry <i
-                                                    class="ml-2 fa-solid fa-paper-plane"
-                                                /></button
-                                            >
+                                                >Send Enquiry
+                                                {#if isSubmitting}
+                                                    <div
+                                                        class="spinner inline-block"
+                                                    />
+                                                {:else}
+                                                    <i
+                                                        class="ml-2 fa-solid fa-paper-plane"
+                                                    />
+                                                {/if}
+                                            </button>
                                         </div>
                                         <p class="text-[#757693]">
                                             <i
@@ -142,5 +188,24 @@
     }
     section .fa-times:active {
         border-color: black;
+    }
+    .spinner {
+        position: relative;
+        top: 5px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top: 4px solid #ffffff;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>

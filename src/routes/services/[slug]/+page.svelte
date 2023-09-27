@@ -4,6 +4,11 @@
     import ContactIcons from "$lib/ContactIcons.svelte";
     import { load } from "./+page.js";
     import Error from "$lib/Error.svelte";
+    import Form from "$lib/Form.svelte";
+    import Flash from "$lib/Flash.svelte";
+    import { invalidateAll } from "$app/navigation";
+    import { applyAction, deserialize } from "$app/forms";
+    import { sendEmail } from "$lib/SendEmail.js";
 
     let currentUrl;
     let currentServiceName;
@@ -48,6 +53,54 @@
             });
         }
     });
+
+    let isVisible = false;
+
+    function showForm() {
+        if (!isVisible) {
+            isVisible = true;
+        }
+    }
+    function hideForm() {
+        if (isVisible) {
+            isVisible = false;
+        }
+    }
+
+    /** @type {import('./$types').ActionData} */
+    export let form;
+
+    let isSubmitting = false;
+
+    /** @param {{ currentTarget: EventTarget & HTMLFormElement}} event */
+    const handleSubmit = async (event) => {
+        isSubmitting = true;
+        const data = new FormData(event.currentTarget);
+
+        let body = "";
+
+        for (const [name, value] of data.entries()) {
+            body += `<div><b>${name}:</b> ${value}</div></br>`;
+        }
+
+        let subject = "Fixonn-Important: You have received an Enquiry!";
+
+        sendEmail(subject, body);
+
+        const response = await fetch(event.currentTarget.action, {
+            method: "POST",
+            body: data,
+        });
+
+        const result = deserialize(await response.text());
+
+        if (result.type === "success") {
+            await invalidateAll();
+        }
+
+        applyAction(result);
+        isSubmitting = false;
+    };
 </script>
 
 <svelte:head>
@@ -55,6 +108,10 @@
         {currentService.subTitle ? currentService.subTitle : "Page not found!"}
     </title>
 </svelte:head>
+
+{#if form?.success}
+    <Flash flashMessage={form?.message} status={form?.success} />
+{/if}
 
 <!-- Individual Services -->
 {#if Object.keys(currentService).length !== 0}
@@ -117,10 +174,16 @@ url({currentService.serviceBg});"
                         </ul>
                     </div>
                     <button
-                        class="w-fit text-white bg-logoIcon py-3 px-4 rounded-md"
-                        >Book {currentService.title} Service
+                        on:click={showForm}
+                        type="submit"
+                        class="outline-none w-fit text-white border-2 border-logoIcon bg-logoIcon py-3 px-4 rounded-md active:bg-white active:text-logoIcon"
+                        >Book a Fixomann
                         <i class="fa-solid fa-bookmark ml-2" /></button
                     >
+                    <p>
+                        <span class="text-logoIcon">*</span>
+                        {currentService.serviceTerms}
+                    </p>
                 </div>
             </div>
             <div class="mt-20">
@@ -143,6 +206,7 @@ url({currentService.serviceBg});"
 <!-- Other Absolute Components -->
 <BackToTop pathName={currentUrl} />
 <ContactIcons />
+<Form {isVisible} {hideForm} {handleSubmit} {isSubmitting} />
 
 <style>
     #indServices {

@@ -56,13 +56,11 @@
                     <h1
                         class="text-5xl md:text-6xl font-bold text-white lg:w-1/2 leading-tight"
                     >
-                        Heading for the first slide<span class="text-logoIcon"
-                            >.</span
-                        >
+                        We have Superheroes<span class="text-logoIcon">.</span>
                     </h1>
                     <p class="text-lg tracking-normal lg:w-1/2 text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dignissimos rem, sint harum modi veniam labore.
+                        Who takes care of the end to end process and get you a
+                        resolution.
                     </p>
                     <a
                         href="/about"
@@ -82,13 +80,13 @@
                     <h1
                         class="text-5xl md:text-6xl font-bold text-white lg:w-1/2 leading-tight"
                     >
-                        Heading for the first slide<span class="text-logoIcon"
+                        We deliver 100% Excellence<span class="text-logoIcon"
                             >.</span
                         >
                     </h1>
                     <p class="text-lg tracking-normal lg:w-1/2 text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dignissimos rem, sint harum modi veniam labore.
+                        We always keep our consumers delighted and proactively
+                        work on their requests.
                     </p>
                     <a
                         href="#services"
@@ -124,21 +122,21 @@
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/electrician-hero-bg.jpg");
+            url("../images/bg-slid-1.jpeg");
     }
     .item-2 {
         background-image: linear-gradient(
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/carpenter-hero-bg.jpg");
+            url("../images/bg-slid-2.jpeg");
     }
     .item-3 {
         background-image: linear-gradient(
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("../images/cleaner-hero-bg.jpg");
+            url("../images/bg-slid-3.jpeg");
     }
     @media only screen and (max-width: 700px) {
         .swiper-pagination {

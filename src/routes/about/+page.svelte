@@ -67,28 +67,51 @@
                     />
                 </div>
             </div>
-            <div class="animate_right flex flex-col gap-y-3 md:gap-y-5">
+            <div class="animate_right flex flex-col gap-y-3 md:gap-y-4">
                 <h1 class="text-3xl md:text-5xl font-bold text-black">
                     Fixonn<span class="text-logoIcon">.</span>
                 </h1>
-                <p class="text-md md:text-lg text-[#757693]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Perferendis vel eum quaerat repellat nihil praesentium
-                    corrupti, facere ipsam quidem, explicabo doloribus nulla
-                    modi. Nobis doloremque, reiciendis labore quidem libero
-                    dolor soluta, molestiae beatae asperiores sunt expedita
-                    facere perferendis fuga necessitatibus! Repudiandae, quo ut
-                    delectus ad iste voluptas perspiciatis fugiat aliquam hic
-                    illo distinctio amet quas.
+                <p class="text-[#757693]">
+                    Finding qualified personnel is simplified and hassle-free
+                    using Fixonn to help people connect and offer their services
+                    to have a better chance of making money and growing their
+                    businesses.
                 </p>
-                <p class="text-md md:text-lg text-[#757693]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam sunt voluptas quod officiis doloremque beatae
-                    suscipit, dignissimos asperiores? Assumenda, similique!
+                <h3 class="text-lg">Our Superheroes take Ownership</h3>
+                <div class="text-[#757693]">
+                    <p class="mb-2 flex">
+                        <i
+                            class="fa-solid fa-check mr-2 text-logoIcon relative top-1"
+                        />
+                        <span
+                            >To understand clients requirements and avail
+                            suitable options to select a service that best meets
+                            their needs.</span
+                        >
+                    </p>
+                    <p class="flex">
+                        <i
+                            class="fa-solid fa-check mr-2 text-logoIcon relative top-1"
+                        />
+                        <span
+                            >To make Clients delighted with the services and
+                            gather feedback to work on the same. For those who
+                            are looking for a service and those who are prepared
+                            to provide said service on demand.</span
+                        >
+                    </p>
+                </div>
+                <h3 class="text-lg">Founders message</h3>
+                <p class="text-[#757693]">
+                    We are always delighted to keep our bonding stronger
+                    together. We always try to deliver the best services to our
+                    clients by proactively acting on their concerns. We need to
+                    pace on, and for that we need your support. Thank you and
+                    expecting to make the bong stronger in future as well
                 </p>
                 <a
-                    href="/"
-                    class="px-3 py-2 md:px-4 md:py-3 bg-logoIcon text-white rounded-md w-fit"
+                    href="/#enquiryForm"
+                    class="px-3 py-2 md:px-4 md:py-3 bg-logoIcon text-white rounded-md w-fit border-2 border-logoIcon active:bg-white active:text-logoIcon"
                     >Send Your Enquiry</a
                 >
             </div>
@@ -117,20 +140,13 @@
                         <p
                             class="text-md md:text-lg text-[#757693] md:text-end"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Alias amet vitae necessitatibus consequatur
-                            neque ipsam eveniet placeat enim corrupti, itaque
-                            unde excepturi libero mollitia odit vel quia
-                            quisquam? Iusto, adipisci vero. Adipisci ad nihil
-                            tempore.
-                        </p>
-                        <p
-                            class="text-md md:text-lg text-[#757693] md:text-end"
-                        >
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Molestias explicabo, doloremque debitis
-                            laborum qui eum quam aliquid, unde vero culpa
-                            architecto nulla maxime porro quas nisi.
+                            To channelize the employment for professionals who
+                            do not get scopes to show their productivity.
+                            Empowering the vendors by making them aware of the
+                            processes to make the services more enhanced and
+                            organized. To make the team aware of the AI tools in
+                            future times in order to add more productivity to
+                            the organization standards and business
                         </p>
                     </div>
                 </div>
@@ -160,18 +176,13 @@
                             Our Vision
                         </h1>
                         <p class="text-md md:text-lg text-[#757693]">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Alias amet vitae necessitatibus consequatur
-                            neque ipsam eveniet placeat enim corrupti, itaque
-                            unde excepturi libero mollitia odit vel quia
-                            quisquam? Iusto, adipisci vero. Adipisci ad nihil
-                            tempore.
-                        </p>
-                        <p class="text-md md:text-lg text-[#757693]">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Molestias explicabo, doloremque debitis
-                            laborum qui eum quam aliquid, unde vero culpa
-                            architecto nulla maxime porro quas nisi.
+                            To ensure the connectivity of skilled professionals
+                            with service users. Providing authenticated and
+                            affordable services to the clients. To make the
+                            home-improvement services top notch and manage the
+                            processes. To utilize the technology and smart
+                            protocols to restructure the unorganized business
+                            segment.
                         </p>
                     </div>
                 </div>
@@ -196,72 +207,67 @@
             >
                 <!-- Member - 1 -->
                 <div
-                    class="animate_left bg-white border border-[#E0E0E0] font-mukta rounded-md overflow-hidden"
+                    class="p-2 md:p-4 animate_right bg-white border border-[#E0E0E0] font-mukta rounded-md overflow-hidden"
                 >
                     <div class="sm:h-80 w-fit overflow-hidden">
                         <img
                             class="h-full"
-                            src="https://img.freepik.com/free-photo/smiling-confident-businesswoman-posing-with-arms-folded_1262-20950.jpg?w=900&t=st=1694606749~exp=1694607349~hmac=905499bd06e15476c3f14ed967c992ea2038007336cba1551ff29601b4c59eba"
+                            src="../images/avatar-3637425_640.png"
                             alt=""
                         />
                     </div>
                     <div class="flex flex-col gap-y-2 p-4">
-                        <h2 class="text-2xl font-semibold">Member Name</h2>
-                        <h4 class="text-[#757693]">Designation</h4>
+                        <h2 class="text-2xl font-semibold">Ankur Adhikari</h2>
+                        <h4 class="text-[#757693]">Co-Founder and CEO</h4>
                         <div class="space-x-4">
                             <a
-                                href="https://facebook.com/"
+                                target="_blank"
+                                href="https://www.linkedin.com/in/ankur-adhikari-b2a4331a0"
                                 class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
                             >
-                                <i class="fab fa-facebook-f" />
+                                <i class="fab fa-linkedin" />
                             </a>
                             <a
-                                href="https://twitter.com/"
+                                target="_blank"
+                                href="https://twitter.com/Adhikary7Ankur"
                                 class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
                             >
                                 <i class="fab fa-twitter" />
-                            </a>
-                            <a
-                                href="https://instagram.com/"
-                                class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
-                            >
-                                <i class="fab fa-instagram" />
                             </a>
                         </div>
                     </div>
                 </div>
+
                 <!-- Member - 2 -->
                 <div
-                    class="animate_right bg-white border border-[#E0E0E0] font-mukta rounded-md overflow-hidden"
+                    class="p-2 md:p-4 animate_left bg-white border border-[#E0E0E0] font-mukta rounded-md overflow-hidden"
                 >
                     <div class="sm:h-80 w-fit overflow-hidden">
                         <img
                             class="h-full"
-                            src="https://img.freepik.com/free-photo/cheerful-young-businessman-checking-email-tablet-looking-camera_1262-14164.jpg?w=1060&t=st=1694606801~exp=1694607401~hmac=fa4e68eabe77670c14a8b0795d4be69c70c48838fc4afde75ba4ea77b9d8fe9b"
+                            src="../images/user-297566_640.png"
                             alt=""
                         />
                     </div>
                     <div class="flex flex-col gap-y-2 p-4">
-                        <h2 class="text-2xl font-semibold">Member Name</h2>
-                        <h4 class="text-[#757693]">Designation</h4>
+                        <h2 class="text-2xl font-semibold">Anushka Sinha</h2>
+                        <h4 class="text-[#757693]">
+                            Co-Founder and Head - People Management
+                        </h4>
                         <div class="space-x-4">
                             <a
-                                href="https://facebook.com/"
+                                target="_blank"
+                                href="https://www.linkedin.com/in/anushka-sinha-695350238"
                                 class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
                             >
-                                <i class="fab fa-facebook-f" />
+                                <i class="fab fa-linkedin" />
                             </a>
                             <a
-                                href="https://twitter.com/"
+                                target="_blank"
+                                href="https://x.com/Anushka06352517?t=fEQ7QszcRXNbXdMvCO0viA&s=08"
                                 class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
                             >
                                 <i class="fab fa-twitter" />
-                            </a>
-                            <a
-                                href="https://instagram.com/"
-                                class="text-[#757693] hover:text-logoIcon ease-in duration-1500"
-                            >
-                                <i class="fab fa-instagram" />
                             </a>
                         </div>
                     </div>

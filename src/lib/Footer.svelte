@@ -96,20 +96,24 @@
                     <li class="mb-2">
                         <a
                             class="hover:text-black ease-in duration-300"
-                            href="mailto:your@example.com"
-                            ><i class="fa-solid fa-envelope text-sm mr-2" /> your@example.com</a
+                            href="mailto:info@fixonn.com"
+                            ><i class="fa-solid fa-envelope text-sm mr-2" /> info@fixonn.com</a
                         >
                     </li>
                     <li class="mb-2">
                         <a
                             class="hover:text-black ease-in duration-300"
-                            href="tel:+919998705371"
-                            ><i class="fa-solid fa-phone text-sm mr-2" /> (123) 456-7890</a
+                            href="tel:+918296603137"
+                            ><i class="fa-solid fa-phone text-sm mr-2" /> +91 82966
+                            03137</a
                         >
                     </li>
-                    <li class="mb-2">
-                        <i class="fa-solid fa-location-dot text-sm mr-2" /> 123 Street
-                        Name, City
+                    <li class="mb-2 flex">
+                        <i class="fa-solid fa-location-dot text-sm mr-2" />
+                        <p>
+                            #55, Arcade, 1st D Cross, Mahaveer Road
+                            Akshayanagar, Akshaya Gardens Bangalore, Karnataka
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -177,22 +181,18 @@
             </p>
             <div class="space-x-4">
                 <a
-                    href="https://facebook.com/"
+                    target="_blank"
+                    href="https://www.linkedin.com/company/fixonn/"
                     class="text-opacity-75 hover:text-logoIcon ease-in duration-150"
                 >
-                    <i class="fab fa-facebook-f" />
+                    <i class="fab fa-linkedin" />
                 </a>
                 <a
-                    href="https://twitter.com/"
+                    target="_blank"
+                    href="https://twitter.com/Adhikary7Ankur"
                     class="text-opacity-75 hover:text-logoIcon ease-in duration-150"
                 >
                     <i class="fab fa-twitter" />
-                </a>
-                <a
-                    href="https://instagram.com/"
-                    class="text-opacity-75 hover:text-logoIcon ease-in duration-150"
-                >
-                    <i class="fab fa-instagram" />
                 </a>
             </div>
         </div>

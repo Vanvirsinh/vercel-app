@@ -5,16 +5,16 @@ export let services = {
         subTitle: "Top Class Plumbing Service",
         serviceImg: "../images/service-plumbing.jpg",
         serviceBg: "../images/service-plumbing-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Wrench all your plumbing problems away with Fixonn.",
+        serviceProvider: "plumber",
         subServices: [
-            "Repair & Fixes of taps, faucets, showers and sprays",
-            "Replacement Services",
-            "Installation Services",
-            "Cleaning of Water tanks",
-            "Full Day Plumber Services",
-            "Blocked Drains & Running Toilet Services",
-            "Other Services"
+            "Replacement and installation of taps, showers and faucets",
+            "Motor installation and service",
+            "Wash Basin and Sink blockage removal",
+            "Grouting",
+            "Toilet fittings",
         ],
+        serviceTerms: "If you could not find the issue, book a plumber. Small visiting charges will be applicable if in case there is no work done.",
         subServiceImages: [
             {
                 title: "Basin & Sink",
@@ -39,15 +39,19 @@ export let services = {
         subTitle: "Top Class Electrical Service",
         serviceImg: "../images/service-electrical.jpg",
         serviceBg: "../images/service-electrical-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Did the light of your master bedroom get fused? Or the geyser is not working? We will get it rectified.",
+        serviceProvider: "electrician",
         subServices: [
-            "Installation Services",
-            "Repair & Fix Services",
-            "Replacement Services",
-            "Electric Wires or Breakdown Services",
-            "Full Day Electrician Services",
-            "Other Services"
+            "General AC Servicing and Installation",
+            "General Geyser Servicing and Installation",
+            "Fan repair and service",
+            "Wiring issues",
+            "Internal with casing",
+            "Internal without casing",
+            "Switch and socket rectification",
+            "Lights and Door Installation",
         ],
+        serviceTerms: "If you could not find the issue, book an electrician. Small visiting charges will be applicable if in case there is no work done.",
         subServiceImages: [
             {
                 title: "Switch and Socket",
@@ -72,15 +76,16 @@ export let services = {
         subTitle: "Top Class Pest Control Service",
         serviceImg: "../images/service-pest-control.jpg",
         serviceBg: "../images/service-pest-control-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Protect your home from unwanted guests. We make your home free from pests. Get your quote with no obligation. Fixoman are trained to diagnose and treat all types of pest problems.",
         subServices: [
-            "Inspection for bugs/pest attack",
-            "Bio Pest Control",
-            "Fumigation",
-            "Insulation",
-            "Sanitization",
-            "Gel baiting and residual sprays"
+            "General Pest Control",
+            "Bed bugs treatment",
+            "Rat/ Rodent Control",
+            "Termite Control",
+            "Mosquito Contr",
+            "Bee removal",
         ],
+        serviceTerms: "If you could not find the issue, book an exterminator. Small visiting charges will be applicable if in case there is no work done.",
         subServiceImages: [
             {
                 title: "Pest Control",
@@ -105,17 +110,20 @@ export let services = {
         subTitle: "Top Class Deep Cleaning Service",
         serviceImg: "../images/service-deep-cleaning.jpg",
         serviceBg: "../images/service-deep-cleaning-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Your spotless space awaits our expert cleaning service! Leave the mess to us.",
         subServices: [
-            "Kitchen Basic and Deep Cleaning Services",
-            "Kitchen appliance basic cleaning",
-            "Commercial Deep Cleaning",
-            "Washroom Maintenance",
-            "Bathroom deep cleaning",
-            "Home Deep Cleaning",
-            "Dusting and mopping the premises",
-            "Carpet Cleaning"
+            "Move in/ Move out cleaning",
+            "Basic cleaning",
+            "Premium Home cleaning",
+            "Furnished",
+            "Semi furnished",
+            "Unfurnished",
+            "Kitchen and Washroom cleaning",
+            "Special event cleaning",
+            "Sofa and Carpet cleaning",
+
         ],
+        serviceTerms: "If you could not find the issue, book an expert for consultation.",
         subServiceImages: [
             {
                 title: "Deep Cleaning",
@@ -140,14 +148,16 @@ export let services = {
         subTitle: "Top Class Painting Service",
         serviceImg: "../images/service-painting.jpg",
         serviceBg: "../images/service-painting-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Give your life a fresh coat with Fixonn! Get your painting done by professionals. Fixonn fulfills all your painting requirements. Elevate the appearance with us.",
         subServices: [
-            "Professional Supervison",
-            "Reliable",
-            "Cost-Effective",
-            "Vivid Designing Services",
-            "Quick Booking & Swift Service Delivery"
+            "Residential and Commercial",
+            "Exterior painting",
+            "Interior painting and minor touch ups",
+            "Paint and Stain finishing",
+            "Texture painting",
+
         ],
+        serviceTerms: "If you could not find the issue, book an expert for consultation. Free consultation and site support.",
         subServiceImages: [
             {
                 title: "Painting",
@@ -172,12 +182,16 @@ export let services = {
         subTitle: "Top Class Carpentry Service",
         serviceImg: "../images/service-carpentry.jpg",
         serviceBg: "../images/service-carpentry-bg.jpg",
-        servicePara: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti incidunt hic quam voluptatum atque inventore sit officiis cum deserunt ullam maiores, quos earum aliquam temporibus assumenda fuga quasi. Officiis natus voluptatum iusto eaque incidunt ea inventore earum cupiditate! Ad, velit?",
+        servicePara: "Reassembling and installation needs accuracy, get any of your carpentry issues sorted by professionals.",
         subServices: [
-            "Get Carpentry Work Done at Your Doorstep",
-            "Certified, Skilled & Experienced Carpenters at Reasonable Price",
-            "Price will be quoted upon scope of work"
+            "Curtain rods installation",
+            "Window repair",
+            "Cloth hanger installation",
+            "Door lock - Installation / dismantling and services",
+            "Cupboard lock installation and repair",
+            "Pigeon Net installation",
         ],
+        serviceTerms: "If you could not find the issue, book an expert for consultation.",
         subServiceImages: [
             {
                 title: "Carpentry",

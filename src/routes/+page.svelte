@@ -3,9 +3,13 @@
     import BackToTop from "$lib/BackToTop.svelte";
     import ContactIcons from "$lib/ContactIcons.svelte";
     import Form from "$lib/Form.svelte";
+    import Flash from "$lib/Flash.svelte";
     import Swiper, { Pagination, Autoplay } from "swiper";
     import "swiper/swiper-bundle.min.css";
     import { onMount } from "svelte";
+    import { invalidateAll } from "$app/navigation";
+    import { applyAction, deserialize } from "$app/forms";
+    import { sendEmail } from "$lib/SendEmail.js";
 
     let testimonial01;
     let ScrollReveal;
@@ -196,43 +200,92 @@
 
     let reviews = [
         {
-            userImage:
-                "https://classsolution.netlify.app/images/tst-image1.jpg",
+            userImage: "../images/user-vector.png",
             userName: "Rajesh Kumar",
             userDesignation: "IT Manager",
             review: "Impressed by Fixonn's prompt service. Their electrician fixed my issue swiftly. Highly recommended!",
             stars: [1, 2, 3, 4, 5],
         },
         {
-            userImage:
-                "https://classsolution.netlify.app/images/tst-image2.jpg",
+            userImage: "../images/female-user-vector.png",
             userName: "Meena Patel",
             userDesignation: "Business Owner",
             review: "Fantastic plumbing service! Solved a major leak in no time. Thank you, Fixonn!",
             stars: [1, 2, 3],
         },
         {
-            userImage:
-                "https://classsolution.netlify.app/images/tst-image3.jpg",
+            userImage: "../images/female-user-vector.png",
             userName: "Sneha Kumari",
             userDesignation: "Homemaker",
             review: "Pest control service by Fixonn worked wonders! No more creepy crawlies in our home. Very happy!",
             stars: [1, 2, 3, 4],
         },
         {
-            userImage:
-                "https://classsolution.netlify.app/images/tst-image4.jpg",
+            userImage: "../images/user-vector.png",
             userName: "Amit Sharma",
             userDesignation: "Teacher",
             review: "Painters from Fixonn transformed my office space beautifully. Great attention to detail.",
             stars: [1, 2, 3, 4, 5],
         },
     ];
+
+    /** @type {import('./$types').ActionData} */
+    export let form;
+
+    let name = "";
+    let email = "";
+    let phone = "";
+    let message = "";
+    let service = "plumbing";
+    let isSubmitting = false;
+
+    function resetForm() {
+        name = "";
+        email = "";
+        phone = "";
+        service = "plumbing";
+        message = "";
+    }
+
+    /** @param {{ currentTarget: EventTarget & HTMLFormElement}} event */
+    const handleSubmit = async (event) => {
+        resetForm();
+        isSubmitting = true;
+        const data = new FormData(event.currentTarget);
+
+        let body = "";
+
+        for (const [name, value] of data.entries()) {
+            body += `<div><b>${name}:</b> ${value}</div></br>`;
+        }
+
+        let subject = "Fixonn-Important: You have received an Enquiry!";
+
+        sendEmail(subject, body);
+
+        const response = await fetch(event.currentTarget.action, {
+            method: "POST",
+            body: data,
+        });
+
+        const result = deserialize(await response.text());
+
+        if (result.type === "success") {
+            await invalidateAll();
+        }
+
+        applyAction(result);
+        isSubmitting = false;
+    };
 </script>
 
 <svelte:head>
     <title>Fixonn - A multi-vendor service provider</title>
 </svelte:head>
+
+{#if form?.success}
+    <Flash flashMessage={form?.message} status={form?.success} />
+{/if}
 
 <!-- Hero Section -->
 <section id="hero">
@@ -289,7 +342,7 @@
                         services market segment is coming up with innovative
                         ways to keep up with the ongoing market trends. Fixonn
                         is a feasible online platform providing in-house home
-                        improvement services for homeowners in Bangalore.
+                        improvement services for homeowners in India.
                     </p>
                     <div>
                         <ul class="text-lg flex flex-col gap-y-2">
@@ -310,7 +363,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="flex gap-3">
+                    <div class="flex-col md:flex-row flex gap-3">
                         <a
                             href="/about"
                             class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
@@ -319,7 +372,7 @@
                         <a
                             href="/how-fixonn-works"
                             class="active:bg-white active:text-logoIcon border border-logoIcon w-fit bg-logoIcon text-white flex px-4 py-3 rounded"
-                            >How Fixonn Works</a
+                            >How We Operate</a
                         >
                     </div>
                 </div>
@@ -354,7 +407,7 @@
                             <h3 class="text-xl font-bold">{service.title}</h3>
                             <a
                                 href={service.url}
-                                class="w-fit bg-logoIcon text-white flex px-4 py-2 rounded"
+                                class="w-fit bg-logoIcon text-white flex px-4 py-2 rounded border-2 border-logoIcon active:bg-opacity-50"
                                 >Know More</a
                             >
                         </div>
@@ -457,26 +510,21 @@
                     <div class="md:px-8 rounded-md">
                         <form
                             class="flex flex-col gap-y-4"
-                            name="enquiry"
+                            on:submit|preventDefault={handleSubmit}
                             method="POST"
-                            netlify
-                            data-netlify="true"
-                            data-netlify-honeypot="bot-field"
+                            action="?/createEnquiry"
                         >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="enquiry"
-                            />
                             <div class="flex flex-col gap-y-1">
                                 <label for="name" class="text-[#757693]"
                                     >Your Name (Required)</label
                                 >
                                 <input
+                                    bind:value={name}
                                     type="text"
                                     id="name"
                                     name="name"
                                     class="border border-[#E0E0E0] rounded-md p-2"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col gap-y-1">
@@ -484,10 +532,12 @@
                                     >Your Email (Optional)</label
                                 >
                                 <input
+                                    bind:value={email}
                                     type="email"
                                     id="email"
                                     name="email"
                                     class="border border-[#E0E0E0] rounded-md p-2"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col gap-y-1">
@@ -495,10 +545,12 @@
                                     >Your Phone (Required)</label
                                 >
                                 <input
+                                    bind:value={phone}
                                     type="text"
                                     id="phone"
                                     name="phone"
                                     class="border border-[#E0E0E0] rounded-md p-2"
+                                    required
                                 />
                             </div>
                             <div class="flex flex-col gap-y-1">
@@ -506,6 +558,7 @@
                                     >Select the Service you want (Required)</label
                                 >
                                 <select
+                                    bind:value={service}
                                     id="service"
                                     name="service"
                                     class="border border-[#E0E0E0] rounded-md p-2"
@@ -529,20 +582,28 @@
                                     >Your Message</label
                                 >
                                 <textarea
+                                    bind:value={message}
                                     name="message"
                                     class="border border-[#E0E0E0] rounded-md p-2"
                                     id="message"
                                     rows="5"
+                                    required
                                 />
                             </div>
                             <div>
                                 <button
+                                    disabled={isSubmitting}
                                     type="submit"
                                     class="bg-logoIcon px-6 py-3 text-white rounded-md"
-                                    >Send Enquiry <i
-                                        class="ml-2 fa-solid fa-paper-plane"
-                                    /></button
-                                >
+                                    >Send Enquiry
+                                    {#if isSubmitting}
+                                        <div class="spinner inline-block" />
+                                    {:else}
+                                        <i
+                                            class="ml-2 fa-solid fa-paper-plane"
+                                        />
+                                    {/if}
+                                </button>
                             </div>
                             <p class="text-[#757693]">
                                 <i
@@ -616,7 +677,7 @@
 <!-- Other Absolute Components -->
 <BackToTop pathName="/" />
 <ContactIcons />
-<Form {isVisible} {hideForm} />
+<Form {isVisible} {hideForm} {handleSubmit} {isSubmitting} />
 
 <style>
     .service-card:hover {
@@ -638,5 +699,24 @@
     :root {
         --swiper-theme-color: #181c31;
         --swiper-pagination-bullet-inactive-opacity: 0.3;
+    }
+    .spinner {
+        position: relative;
+        top: 5px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top: 4px solid #ffffff;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>

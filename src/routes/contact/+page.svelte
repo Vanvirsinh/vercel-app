@@ -1,7 +1,11 @@
 <script>
     import BackToTop from "$lib/BackToTop.svelte";
     import ContactIcons from "$lib/ContactIcons.svelte";
+    import Flash from "$lib/Flash.svelte";
     import { onMount } from "svelte";
+    import { invalidateAll } from "$app/navigation";
+    import { applyAction, deserialize } from "$app/forms";
+    import { sendEmail } from "$lib/SendEmail.js";
 
     let ScrollReveal;
 
@@ -39,11 +43,64 @@
             });
         }
     });
+
+    /** @type {import('./$types').ActionData} */
+    export let form;
+
+    let name = "";
+    let email = "";
+    let subject = "";
+    let phone = "";
+    let message = "";
+    let isSubmitting = false;
+
+    function resetForm() {
+        name = "";
+        email = "";
+        subject = "";
+        phone = "";
+        message = "";
+    }
+
+    /** @param {{ currentTarget: EventTarget & HTMLFormElement}} event */
+    const handleSubmit = async (event) => {
+        resetForm();
+        isSubmitting = true;
+        const data = new FormData(event.currentTarget);
+
+        let body = "";
+
+        for (const [name, value] of data.entries()) {
+            body += `<div><b>${name}:</b> ${value}</div></br>`;
+        }
+
+        let mailSubject = "Fixonn-Important: You have received an Contact!";
+
+        sendEmail(mailSubject, body);
+
+        const response = await fetch(event.currentTarget.action, {
+            method: "POST",
+            body: data,
+        });
+
+        const result = deserialize(await response.text());
+
+        if (result.type === "success") {
+            await invalidateAll();
+        }
+
+        applyAction(result);
+        isSubmitting = false;
+    };
 </script>
 
 <svelte:head>
     <title>Contact Us - Fixonn</title>
 </svelte:head>
+
+{#if form?.success}
+    <Flash flashMessage={form?.message} status={form?.success} />
+{/if}
 
 <section id="contactUsIntro" class="py-20 md:py-32">
     <div class="font-mukta flex flex-col items-center animate_bottom">
@@ -109,9 +166,15 @@
                             Let us know if you have anything to share with us.
                         </h1>
                     </div>
-                    <form class="flex flex-col gap-y-4">
+                    <form
+                        class="flex flex-col gap-y-4"
+                        on:submit|preventDefault={handleSubmit}
+                        method="POST"
+                        action="?/createContact"
+                    >
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input
+                                bind:value={name}
                                 name="name"
                                 placeholder="Enter your name"
                                 type="text"
@@ -119,6 +182,7 @@
                                 required
                             />
                             <input
+                                bind:value={email}
                                 name="email"
                                 placeholder="Enter your email"
                                 type="email"
@@ -128,12 +192,14 @@
                         </div>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <input
+                                bind:value={subject}
                                 name="subject"
                                 placeholder="Enter your subject (optional)"
                                 type="text"
                                 class="sm:w-1/2 rounded-md p-3 border border-[#E0E0E0]"
                             />
                             <input
+                                bind:value={phone}
                                 name="phone"
                                 placeholder="Enter your phone (optional)"
                                 type="text"
@@ -142,6 +208,7 @@
                         </div>
                         <div>
                             <textarea
+                                bind:value={message}
                                 name="message"
                                 placeholder="Enter your message..."
                                 class="w-full rounded-md p-3 border border-[#E0E0E0]"
@@ -153,10 +220,13 @@
                             <button
                                 class="bg-logoIcon text-white rounded-md py-3 px-4"
                                 type="submit"
-                                >Send Message <i
-                                    class="ml-2 fa fa-arrow-right"
-                                /></button
-                            >
+                                >Send Message
+                                {#if isSubmitting}
+                                    <div class="spinner inline-block" />
+                                {:else}
+                                    <i class="ml-2 fa fa-arrow-right" />
+                                {/if}
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -178,5 +248,25 @@
             url("../images/businessman-big-office.jpg");
         background-position: center;
         background-size: cover;
+    }
+
+    .spinner {
+        position: relative;
+        top: 5px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top: 4px solid #ffffff;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>
