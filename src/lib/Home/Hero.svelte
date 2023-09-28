@@ -129,14 +129,14 @@
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("https://fixonn.netlify.app/images/bg-slid-2.jpeg");
+            url("https://fixonn.netlify.app/images/bg-slid-3.jpeg");
     }
     .item-3 {
         background-image: linear-gradient(
                 rgba(0, 0, 0, 0.386),
                 rgba(0, 0, 0, 0.326)
             ),
-            url("https://fixonn.netlify.app/images/bg-slid-3.jpeg");
+            url("https://fixonn.netlify.app/images/bg-slide-customer-satisfaction.png");
     }
     @media only screen and (max-width: 700px) {
         .swiper-pagination {

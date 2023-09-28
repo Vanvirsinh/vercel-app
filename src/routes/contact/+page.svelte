@@ -134,18 +134,21 @@
                 <div
                     class="animate_bottom mb-2 p-3 md:p-4 flex justify-center items-center border border-[#E0E0E0] rounded-md text-lg text-[#757693]"
                 >
-                    <i class="fa-solid fa-envelope text-sm mr-2" /> your@example.com
+                    <i class="fa-solid fa-envelope text-sm mr-2" /> info@fixonn.com
                 </div>
                 <div
                     class="animate_bottom mb-2 p-3 md:p-4 flex justify-center items-center border border-[#E0E0E0] rounded-md text-lg text-[#757693]"
                 >
-                    <i class="fa-solid fa-phone text-sm mr-2" /> (123) 456-7890
+                    <i class="fa-solid fa-phone text-sm mr-2" /> +91 82966 03137
                 </div>
                 <div
                     class="animate_bottom mb-2 p-3 md:p-4 flex justify-center items-center border border-[#E0E0E0] rounded-md text-lg text-[#757693]"
                 >
-                    <i class="fa-solid fa-location-dot text-sm mr-2" /> 123 Street
-                    Name, City
+                    <i class="fa-solid fa-location-dot text-sm mr-2" />
+                    <span class="text-center"
+                        >#55, Arcade, 1st D Cross, Mahaveer Road Akshayanagar,
+                        Akshaya Gardens Bangalore, Karnataka</span
+                    >
                 </div>
             </div>
             <div class="mt-0 md:mt-20 grid md:grid-cols-2">
